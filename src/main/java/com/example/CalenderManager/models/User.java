@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "user1")
+@Table(name = "user2")
 @Data
 @NoArgsConstructor
 public class User {
@@ -17,8 +17,8 @@ public class User {
     private String username;
     @Column(name = "password")
     private String password;
-    @Column(name = "mail", unique = true)
-    private String mail;
+//    @Column(name = "mail", unique = true)
+//    private String mail;
     @Column(name = "roles")
     private String roles;
 
@@ -34,9 +34,9 @@ public class User {
         return password;
     }
 
-    public String getMail() {
-        return mail;
-    }
+//    public String getMail() {
+//        return mail;
+//    }
 
     public String getRoles() {
         return roles;
@@ -54,9 +54,9 @@ public class User {
         this.password = password;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
+//    public void setMail(String mail) {
+//        this.mail = mail;
+//    }
 
     public void setRoles(String roles) {
         this.roles = roles;

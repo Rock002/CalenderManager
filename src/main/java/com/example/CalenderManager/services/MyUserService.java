@@ -28,8 +28,12 @@ public class MyUserService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("not found" + username));
     }
 
-    public void saveToDatabase(User user) {
+    public void registerUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        userRepository.saveAndFlush(user);
+    }
+
+    public void saveToDatabase(User user) {
         userRepository.saveAndFlush(user);
     }
 
